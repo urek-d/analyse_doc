@@ -1,0 +1,1336 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Write your documentation in Markdown and create a professional static site in minutes – searchable, customizable, in 60+ languages, for all devices">
+      
+      
+        <meta name="author" content="Djade djidula">
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../Optimisation/job_shop_scheduling/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Analyse des Séries Temporelles - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analyse-des-series-temporelles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analyse des Séries Temporelles
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Analyse des Séries Temporelles
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Optimisation/job_shop_scheduling/" class="md-tabs__link">
+          
+  
+    
+  
+  Optimisation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Analyse des Séries Temporelles
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Analyse des Séries Temporelles
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts de Base
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts de Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#composantes-dune-serie-temporelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composantes d'une Série Temporelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stationnarite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stationnarité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocorrélation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-temporelles-multivariees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Séries Temporelles Multivariées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Séries Temporelles Multivariées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Spécifiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodologies-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodologies Spécifiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodologies Spécifiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeles-var-vector-autoregression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles VAR (Vector AutoRegression)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-lstm-multivaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles LSTM Multivariés
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-avec-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles avec Attention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodologies-et-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodologies et Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodologies et Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decomposition-de-saisonnalite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Décomposition de Saisonnalité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-arima-autoregressive-integrated-moving-average" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles ARIMA (AutoRegressive Integrated Moving Average)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseaux-de-neurones-recurrents-rnn-et-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseaux de Neurones Recurrents (RNN) et LSTM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-et-utilisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications et Utilisations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications et Utilisations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#previsions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prévisions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-danomalies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Détection d'Anomalies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-multivariee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse Multivariée
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure-generale-danalyse-des-series-temporelles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procédure Générale d'Analyse des Séries Temporelles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procédure Générale d'Analyse des Séries Temporelles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collecte-et-exploration-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collecte et Exploration des Données
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pretraitement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prétraitement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modélisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-du-modele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation du Modèle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevision-et-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prévision et Évaluation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Optimisation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Optimisation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/job_shop_scheduling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation de l'Ordonnancement des Tâches
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/inventory_optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation des Inventaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/route_optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation des Routes de Livraison
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/portfolio_optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation de la Gestion de Portefeuille
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/project_scheduling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation de la Planification des Projets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Optimisation/production_planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimisation de la Planification de la Production
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts de Base
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts de Base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#composantes-dune-serie-temporelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Composantes d'une Série Temporelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stationnarite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stationnarité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocorrélation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#series-temporelles-multivariees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Séries Temporelles Multivariées
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Séries Temporelles Multivariées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Spécifiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodologies-specifiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodologies Spécifiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodologies Spécifiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modeles-var-vector-autoregression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles VAR (Vector AutoRegression)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-lstm-multivaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles LSTM Multivariés
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-avec-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles avec Attention
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodologies-et-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodologies et Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthodologies et Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decomposition-de-saisonnalite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Décomposition de Saisonnalité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modeles-arima-autoregressive-integrated-moving-average" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèles ARIMA (AutoRegressive Integrated Moving Average)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseaux-de-neurones-recurrents-rnn-et-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Réseaux de Neurones Recurrents (RNN) et LSTM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-et-utilisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications et Utilisations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications et Utilisations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#previsions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prévisions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-danomalies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Détection d'Anomalies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-multivariee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse Multivariée
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedure-generale-danalyse-des-series-temporelles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procédure Générale d'Analyse des Séries Temporelles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Procédure Générale d'Analyse des Séries Temporelles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collecte-et-exploration-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collecte et Exploration des Données
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pretraitement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prétraitement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modélisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-du-modele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation du Modèle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevision-et-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prévision et Évaluation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="analyse-des-series-temporelles">Analyse des Séries Temporelles</h1>
+<h2 id="introduction">Introduction</h2>
+<p>La série temporelle est une forme de données où les observations sont collectées à des intervalles réguliers dans le temps. L'analyse des séries temporelles vise à extraire des informations significatives sur les comportements passés et à utiliser ces informations pour prévoir les tendances futures. Cette documentation couvre les concepts de base, les méthodologies courantes, leurs applications et fournit une procédure générale pour l'analyse des séries temporelles.</p>
+<hr />
+<h2 id="concepts-de-base">Concepts de Base</h2>
+<h3 id="composantes-dune-serie-temporelle">Composantes d'une Série Temporelle</h3>
+<ul>
+<li><strong>Tendance</strong> : La direction générale dans laquelle les données se déplacent sur une longue période.</li>
+<li><strong>Saisonnalité</strong> : Les variations périodiques qui se produisent à des intervalles fixes (par exemple, saisonnalité mensuelle dans les ventes de Noël).</li>
+<li><strong>Cycle</strong> : Les variations non périodiques qui peuvent se produire sur de longues périodes, souvent influencées par des facteurs économiques ou sociétaux.</li>
+</ul>
+<h3 id="stationnarite">Stationnarité</h3>
+<p>Une série temporelle est dite stationnaire si ses propriétés statistiques telles que la moyenne et la variance sont constantes dans le temps. Cela facilite l'application de nombreux modèles statistiques.</p>
+<h3 id="autocorrelation">Autocorrélation</h3>
+<p>La corrélation d'une série temporelle avec une version décalée d'elle-même. Les fonctions d'autocorrélation (ACF) et d'autocorrélation partielle (PACF) aident à identifier les décalages significatifs pour les modèles ARIMA.</p>
+<hr />
+<h2 id="series-temporelles-multivariees">Séries Temporelles Multivariées</h2>
+<h3 id="introduction_1">Introduction</h3>
+<p>Une série temporelle multivariée est composée de plusieurs séries temporelles observées simultanément. Elle permet de capturer les relations entre différentes variables tout en tenant compte des dépendances temporelles.</p>
+<h3 id="concepts-specifiques">Concepts Spécifiques</h3>
+<ul>
+<li><strong>Relations Inter-Variables</strong> : Les interactions entre les variables à un instant donné.</li>
+<li><strong>Causalité de Granger</strong> : Technique permettant d'identifier si une variable aide à prédire une autre.</li>
+<li><strong>Dépendances Croisées</strong> : Les modèles doivent capturer les interdépendances entre variables, en plus des dépendances temporelles.</li>
+</ul>
+<h3 id="methodologies-specifiques">Méthodologies Spécifiques</h3>
+<h4 id="modeles-var-vector-autoregression">Modèles VAR (Vector AutoRegression)</h4>
+<p>Les modèles VAR prédisent chaque variable en fonction de ses valeurs passées et des valeurs passées des autres variables.</p>
+<h4 id="modeles-lstm-multivaries">Modèles LSTM Multivariés</h4>
+<p>Les réseaux LSTM permettent de capturer des relations complexes entre variables et dans le temps.</p>
+<h4 id="modeles-avec-attention">Modèles avec Attention</h4>
+<p>Les mécanismes d'attention identifient les variables ou séquences temporelles les plus importantes pour la prédiction.</p>
+<hr />
+<h2 id="methodologies-et-techniques">Méthodologies et Techniques</h2>
+<h3 id="decomposition-de-saisonnalite">Décomposition de Saisonnalité</h3>
+<p>Technique pour séparer une série temporelle en ses composantes de tendance, saisonnalité et résidus afin de mieux comprendre les motifs sous-jacents.</p>
+<h3 id="modeles-arima-autoregressive-integrated-moving-average">Modèles ARIMA (AutoRegressive Integrated Moving Average)</h3>
+<p>Utilisés pour modéliser des séries temporelles stationnaires. ARIMA comprend trois parties : la partie autorégressive (AR), la partie intégrée (I) et la partie moyenne mobile (MA). Les paramètres (p, d, q) déterminent le nombre de termes AR, les différences nécessaires pour rendre la série stationnaire, et le nombre de termes MA.</p>
+<h3 id="reseaux-de-neurones-recurrents-rnn-et-lstm">Réseaux de Neurones Recurrents (RNN) et LSTM</h3>
+<p>Utilisés pour capturer les dépendances séquentielles dans les données, adaptés lorsque les données présentent des dépendances complexes dans le temps.</p>
+<hr />
+<h2 id="applications-et-utilisations">Applications et Utilisations</h2>
+<h3 id="previsions">Prévisions</h3>
+<p>L'objectif principal de l'analyse des séries temporelles est de faire des prévisions précises sur les valeurs futures, ce qui est crucial pour la planification stratégique et la gestion des ressources.</p>
+<h3 id="detection-danomalies">Détection d'Anomalies</h3>
+<p>Identifier des comportements inattendus ou des événements rares qui se produisent dans la série temporelle, comme les fraudes financières ou les pannes de système.</p>
+<h3 id="analyse-multivariee">Analyse Multivariée</h3>
+<p>Dans un contexte multivarié, l'analyse peut inclure :
+- <strong>Prévision des ventes</strong> : Utilisation des données de marketing, météo et historiques.
+- <strong>Suivi de performance</strong> : Analyse de KPI multiples dans une organisation.</p>
+<hr />
+<h2 id="procedure-generale-danalyse-des-series-temporelles">Procédure Générale d'Analyse des Séries Temporelles</h2>
+<h3 id="collecte-et-exploration-des-donnees">Collecte et Exploration des Données</h3>
+<p>Identifier la série temporelle à analyser, collecter les données pertinentes et explorer visuellement les tendances et les motifs.</p>
+<h3 id="pretraitement">Prétraitement</h3>
+<ul>
+<li>Assurer la stationnarité des données en appliquant des transformations comme la différenciation ou en ajustant pour la saisonnalité.</li>
+<li>Dans le cas multivarié, vérifier les corrélations entre variables.</li>
+</ul>
+<h3 id="modelisation">Modélisation</h3>
+<p>Choisir un modèle approprié en fonction des caractéristiques identifiées (ARIMA, VAR, LSTM, etc.).</p>
+<h3 id="validation-du-modele">Validation du Modèle</h3>
+<p>Diviser les données en ensembles d'entraînement et de test, ajuster le modèle sur l'ensemble d'entraînement, évaluer les performances sur l'ensemble de test.</p>
+<h3 id="prevision-et-evaluation">Prévision et Évaluation</h3>
+<p>Générer des prévisions pour les données futures, évaluer la précision du modèle en utilisant des métriques telles que l'erreur quadratique moyenne (MSE) ou le coefficient de détermination (R²).</p>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>L'analyse des séries temporelles, univariées ou multivariées, est essentielle dans de nombreux domaines, de la finance à la météorologie, en passant par la santé et la gestion des opérations. Les séries multivariées, en particulier, permettent de capturer des relations complexes, augmentant ainsi la précision des modèles et la valeur des insights obtenus.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Optimisation/job_shop_scheduling/" class="md-footer__link md-footer__link--next" aria-label="Next: Optimisation de l&#39;Ordonnancement des Tâches">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Optimisation de l'Ordonnancement des Tâches
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2024 Martin Donath
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
