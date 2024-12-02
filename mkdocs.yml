@@ -1,0 +1,81 @@
+site_name: My Docs
+
+# site_url: https://squidfunk.github.io/mkdocs-material/
+site_author: Djade djidula
+site_description: >-
+  Write your documentation in Markdown and create a professional static site in
+  minutes – searchable, customizable, in 60+ languages, for all devices
+
+# Repository
+# repo_name: squidfunk/mkdocs-material
+# repo_url: https://github.com/squidfunk/mkdocs-material
+
+# Copyright
+copyright: Copyright &copy; 2016 - 2024 Martin Donath
+
+# Configuration
+theme:
+  name: material
+  # custom_dir: material/overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.footnote.tooltips
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to system preference
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Analyse des Séries Temporelles: timeSeries/time_series_analysis.md
+  - Optimisation:
+      - Optimisation de l'Ordonnancement des Tâches: Optimisation/job_shop_scheduling.md
+      - Optimisation des Inventaires: Optimisation/inventory_optimization.md
+      - Optimisation des Routes de Livraison: Optimisation/route_optimization.md
+      - Optimisation de la Gestion de Portefeuille: Optimisation/portfolio_optimization.md
+      - Optimisation de la Planification des Projets: Optimisation/project_scheduling.md
+      - Optimisation de la Planification de la Production: Optimisation/production_planning.md
